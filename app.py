@@ -25,12 +25,12 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('')
 
-Chat_propmt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，使用語助詞~喵，稱呼使用者為小夥伴，請回答我的問題:"
+Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，使用語助詞~喵，稱呼使用者為小夥伴，請回答我的問題:"
 
 def GPT_response(text):
-    global Chat_propmt
+    global Chat_prompt
     # 接收回應
-    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=Chat_propmt+text, temperature=0.5, max_tokens=500)
+    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=Chat_prompt+text, temperature=0.5, max_tokens=500)
     print(response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
