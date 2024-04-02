@@ -23,47 +23,53 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
-openai_api_key = None
+openai.api_key = os.getenv('')
+
+Chat_propmt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，使用語助詞~喵，稱呼使用者為小夥伴，請回答我的問題:"
 
 def GPT_response(text):
-    global openai_api_key
-    if openai_api_key is None:
-        return "Please set your OpenAI API key first."
-    openai.api_key = openai_api_key
+    global Chat_propmt
     # 接收回應
-    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=text, temperature=0.5, max_tokens=500)
+    response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=Chat_propmt+text, temperature=0.5, max_tokens=500)
+    print(response)
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
 
+
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
 def callback():
+    # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
+    # get request body as text
     body = request.get_data(as_text=True)
+    app.logger.info("Request body: " + body)
+    # handle webhook body
     try:
         handler.handle(body, signature)
     except InvalidSignatureError:
         abort(400)
     return 'OK'
 
-@app.route("/set_openai_key", methods=['POST'])
-def set_openai_key():
-    global openai_api_key
-    openai_api_key = request.form['openai_api_key']
-    return "OpenAI API key set successfully."
 
+# 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if msg == "使用AI":
-        line_bot_api.reply_message(event.reply_token, TextSendMessage("請輸入您的OpenAI API金鑰："))
-    else:
-        try:
-            GPT_answer = GPT_response(msg)
-            line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
-        except:
-            line_bot_api.reply_message(event.reply_token, TextSendMessage('發生錯誤，你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息。'))
+    try:
+        GPT_answer = GPT_response(msg)
+        print(GPT_answer)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+    except:
+        print(traceback.format_exc())
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
+        
+
+@handler.add(PostbackEvent)
+def handle_message(event):
+    print(event.postback.data)
+
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
@@ -79,3 +85,4 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
