@@ -25,8 +25,7 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('')
 
-Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，使用語助詞~喵，稱呼使用者為小夥伴，請回答我的問題:"
-
+Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，多使用語氣詞「喔~！」、「呢」、「喲」 時不時會有「喵」的口癖，稱呼使用者為小夥伴，回答問題:"
 def GPT_response(text):
     global Chat_prompt
     # 接收回應
