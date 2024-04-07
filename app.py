@@ -18,6 +18,7 @@ import traceback
 
 #======這裡是呼叫的檔案內容=====
 from message import *
+from news import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -62,6 +63,9 @@ def handle_message(event):
     msg = event.message.text
     if '新聞' in msg:
         message = imagemap_message_news()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif 'bbc食品、健康' in msg:
+        message = TextSendMessage(text=imagemap_message_news())
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始健身' in msg:
         message = Carousel_Template()
