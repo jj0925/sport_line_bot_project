@@ -9,8 +9,6 @@ from news import *
 
 #ImagemapSendMessage(組圖訊息)
 def imagemap_message_news():
-    bbc_news = bbc_food_healthy()
-    bbc_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in bbc_news])
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/BfTFVDN.jpg",
         alt_text='出現錯誤',
@@ -18,21 +16,21 @@ def imagemap_message_news():
         actions=[
             URIImagemapAction(
                 #bbc食品、健康
-                text=bbc_news_text ,
+                text="bbc食品、健康" ,
                 area=ImagemapArea(
                     x=0, y=0, width=400, height=810
                 )
             ),
             URIImagemapAction(
                 #yahoo
-                link_uri="https://tw.shop.com/search/%E7%94%9F%E6%B4%BB%E5%B8%82%E9%9B%86",
+                text="yahoo",
                 area=ImagemapArea(
                     x=400, y=0, width=400, height=810
                 )
             ),
             URIImagemapAction(
                 #健身運動科學研究
-                link_uri="https://tw.shop.com/search/%E9%98%BF%E7%98%A6%E7%9A%AE%E9%9E%8B",
+                text="健身運動科學研究",
                 area=ImagemapArea(
                     x=800, y=0, width=400, height=810
                 )
