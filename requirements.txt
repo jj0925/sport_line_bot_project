@@ -2,5 +2,5 @@ line-bot-sdk
 flask
 openai < 1.0.0
 gunicorn
-BeautifulSoup
+BeautifulSoup4
 requests
