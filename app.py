@@ -61,8 +61,8 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     if '新聞' in msg:
-     message = imagemap_message_news()
-    line_bot_api.reply_message(event.reply_token, message)
+        message = imagemap_message_news()
+        line_bot_api.reply_message(event.reply_token, message)
     elif '開始健身' in msg:
         message = Carousel_Template()
         line_bot_api.reply_message(event.reply_token, message)
