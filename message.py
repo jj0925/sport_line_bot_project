@@ -8,7 +8,8 @@ from news import *
 #======這裡是呼叫的檔案內容=====
 
 #ImagemapSendMessage(組圖訊息)
-def imagemap_message():
+
+def imagemap_message_news():
     message = ImagemapSendMessage(
         base_url="https://i.imgur.com/BfTFVDN.jpg",
         alt_text='出現錯誤',
