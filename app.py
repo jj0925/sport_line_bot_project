@@ -62,7 +62,7 @@ def callback():
 def handle_message(event):
     bbc_news = bbc_food_healthy()
     yahoo_news = yahoo_health_news()
-    sport_science_news = sport_science_news()
+    science_news = sport_science_news()
     msg = event.message.text
 
     if '新聞' in msg:
@@ -77,7 +77,7 @@ def handle_message(event):
         message = TextSendMessage(text=bbc_news_text)
         line_bot_api.reply_message(event.reply_token, message)
     elif '健身運動科學研究' in msg:
-        sport_science_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in sport_science_news])
+        sport_science_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in science_news])
         message = TextSendMessage(text=sport_science_news_text)
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始健身' in msg:
