@@ -22,11 +22,11 @@ def Carousel_Template_News():
                             label='食品、健康',
                             data='bbc食品、健康'
                         ),
-                        MessageTemplateAction(
+                        PostbackTemplateAction(
                             label='健身運動科學研究',
                             data='健身運動科學研究'
                         ),
-                        URITemplateAction(
+                        PostbackTemplateAction(
                             label='yahoo健康小八卦',
                             data='yahoo健康新聞'
                         )
