@@ -95,6 +95,9 @@ def handle_message(event):
 
 @handler.add(PostbackEvent)
 def handle_postback(event):
+    bbc_news = bbc_food_healthy()
+    yahoo_news = yahoo_health_news()
+    science_news = sport_science_news()
     postback_data = event.postback.data
     if postback_data == 'bbc食品、健康':
         bbc_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in bbc_news])
