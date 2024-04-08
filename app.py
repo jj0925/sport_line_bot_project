@@ -60,25 +60,10 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    bbc_news = bbc_food_healthy()
-    yahoo_news = yahoo_health_news()
-    science_news = sport_science_news()
     msg = event.message.text
 
     if '來看新聞' in msg:
         message = Carousel_Template_News()
-        line_bot_api.reply_message(event.reply_token, message)
-    elif 'bbc食品、健康' in msg:
-        bbc_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in bbc_news])
-        message = TextSendMessage(text=bbc_news_text)
-        line_bot_api.reply_message(event.reply_token, message)
-    elif 'yahoo健康新聞' in msg:
-        yahoo_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in yahoo_news])
-        message = TextSendMessage(text= yahoo_news_text)
-        line_bot_api.reply_message(event.reply_token, message)
-    elif '健身運動科學研究' in msg:
-        sport_science_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in science_news])
-        message = TextSendMessage(text=sport_science_news_text)
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始健身' in msg:
         message = Carousel_Template_Sport()
