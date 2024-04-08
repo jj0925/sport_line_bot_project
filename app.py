@@ -65,10 +65,10 @@ def handle_message(event):
     sport_science_news = sport_science_news()
     msg = event.message.text
 
-    # if '新聞' in msg:
-    #     message = imagemap_message_news()
-    #     line_bot_api.reply_message(event.reply_token, message)
-    if 'bbc食品、健康' in msg:
+    if '新聞' in msg:
+        message = Carousel_Template_News()
+        line_bot_api.reply_message(event.reply_token, message)
+    elif 'bbc食品、健康' in msg:
         bbc_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in bbc_news])
         message = TextSendMessage(text=bbc_news_text)
         line_bot_api.reply_message(event.reply_token, message)
