@@ -65,7 +65,7 @@ def handle_message(event):
     science_news = sport_science_news()
     msg = event.message.text
 
-    if '新聞' in msg:
+    if '來看新聞' in msg:
         message = Carousel_Template_News()
         line_bot_api.reply_message(event.reply_token, message)
     elif 'bbc食品、健康' in msg:
@@ -94,8 +94,21 @@ def handle_message(event):
         
 
 @handler.add(PostbackEvent)
-def handle_message(event):
-    print(event.postback.data)
+def handle_postback(event):
+    postback_data = event.postback.data
+    if postback_data == 'bbc食品、健康':
+        bbc_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in bbc_news])
+        message = TextSendMessage(text=bbc_news_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'yahoo健康新聞':
+        yahoo_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in yahoo_news])
+        message = TextSendMessage(text=yahoo_news_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == '健身運動科學研究':
+        sport_science_news_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in science_news])
+        message = TextSendMessage(text=sport_science_news_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    print(postback_data)
 
 
 @handler.add(MemberJoinedEvent)
