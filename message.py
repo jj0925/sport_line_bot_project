@@ -46,7 +46,7 @@ def Carousel_Template_Sport():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://ibb.co/GJvWZMs',
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='這是第一塊模板',
                     text='一個模板可以有三個按鈕',
                     actions=[
