@@ -10,7 +10,7 @@ from news import *
 #旋轉木馬按鈕(健康新聞)
 def Carousel_Template_News():
     message = TemplateSendMessage(
-        alt_text='選擇新聞發生錯誤',
+        alt_text='選擇新聞',
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
