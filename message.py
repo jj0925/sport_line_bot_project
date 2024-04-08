@@ -7,42 +7,40 @@ from linebot.models import *
 from news import *
 #======這裡是呼叫的檔案內容=====
 
-#ImagemapSendMessage(組圖訊息)
-# def imagemap_message_news():
-#     message = ImagemapSendMessage(
-#         base_url="https://i.imgur.com/BfTFVDN.jpg",
-#         alt_text='出現錯誤',
-#         base_size=BaseSize(height=810, width=1200),
-#         actions=[
-#             URIImagemapAction(
-#                 #bbc食品、健康
-#                 text="bbc食品、健康" ,
-#                 area=ImagemapArea(
-#                     x=0, y=0, width=400, height=810
-#                 )
-#             ),
-#             URIImagemapAction(
-#                 #yahoo
-#                 text="yahoo",
-#                 area=ImagemapArea(
-#                     x=400, y=0, width=400, height=810
-#                 )
-#             ),
-#             URIImagemapAction(
-#                 #健身運動科學研究
-#                 text="健身運動科學研究",
-#                 area=ImagemapArea(
-#                     x=800, y=0, width=400, height=810
-#                 )
-#             )
-#         ]
-#     )
-#     return message
+#旋轉木馬按鈕(健康新聞)
+def Carousel_Template_News():
+    message = TemplateSendMessage(
+        alt_text='選擇新聞發生錯誤',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png',
+                    title='選擇新聞',
+                    text='要選哪一個ლ(╹◡╹ლ)',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='食品、健康',
+                            data='bbc食品、健康'
+                        ),
+                        MessageTemplateAction(
+                            label='健身運動科學研究',
+                            data='健身運動科學研究'
+                        ),
+                        URITemplateAction(
+                            label='yahoo健康小八卦',
+                            data='yahoo健康新聞'
+                        )
+                    ]
+                )
+            ]
+        )
+    )
+    return message
 
 
-#旋轉木馬按鈕訊息介面
+#旋轉木馬按鈕訊息介面(開始運動) 開發中
 
-def Carousel_Template():
+def Carousel_Template_Sport():
     message = TemplateSendMessage(
         alt_text='開始運動',
         template=CarouselTemplate(
