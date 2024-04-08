@@ -14,7 +14,7 @@ def bbc_food_healthy():
         bbc_news.append({'title': title, 'link': link})
     return bbc_news
 
-#yahoo
+#yahoo健康新聞
 def yahoo_health_news():
     yahoo_news = []
     url = 'https://tw.news.yahoo.com/health/'
