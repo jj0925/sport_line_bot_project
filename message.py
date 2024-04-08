@@ -14,7 +14,7 @@ def Carousel_Template_News():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png',
+                    thumbnail_image_url='https://i.ibb.co/RDmhf6r/e17deab6-5ff4-4eb2-bb96-c87bc5a235d4.jpg',
                     title='選擇新聞',
                     text='要選哪一個ლ(╹◡╹ლ)',
                     actions=[
