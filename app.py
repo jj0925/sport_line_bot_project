@@ -81,7 +81,7 @@ def handle_message(event):
         message = TextSendMessage(text=sport_science_news_text)
         line_bot_api.reply_message(event.reply_token, message)
     elif '開始健身' in msg:
-        message = Carousel_Template()
+        message = Carousel_Template_Sport()
         line_bot_api.reply_message(event.reply_token, message)
     else:#ChatGPT回覆
        try:
