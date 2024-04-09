@@ -30,9 +30,8 @@ handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
 openai.api_key = os.getenv('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')
 
-Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，多使用語氣詞「喔~！」、「呢」、「喲」 時不時會有「喵」的口癖，稱呼使用者為小夥伴，回答問題:"
 def GPT_response(text):
-    global Chat_prompt
+    Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，多使用語氣詞「喔~！」、「呢」、「喲」 時不時會有「喵」的口癖，稱呼使用者為小夥伴，回答問題:"
     # 接收回應
     response = openai.Completion.create(model="gpt-3.5-turbo-instruct", prompt=Chat_prompt+text, temperature=0.5, max_tokens=500)
     print(response)
@@ -58,6 +57,7 @@ def callback():
 
 
 # 處理訊息
+#接收user回傳信息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
@@ -78,6 +78,7 @@ def handle_message(event):
            line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
         
 
+#接收linebot回傳信息
 @handler.add(PostbackEvent)
 def handle_postback(event):
     bbc_news = bbc_food_healthy()
