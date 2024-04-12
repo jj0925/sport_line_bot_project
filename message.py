@@ -3,9 +3,6 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
-#======這裡是呼叫的檔案內容=====
-from news import *
-#======這裡是呼叫的檔案內容=====
 
 #旋轉木馬按鈕(健康新聞)
 def Carousel_Template_News():
@@ -37,8 +34,32 @@ def Carousel_Template_News():
     )
     return message
 
+#bmi快速回覆選單 *開發中
+def Quick_Reply_Button_bmi():
+    message = TextSendMessage(
+            text='選擇一個動作',
+            quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton(
+                        action=PostbackAction(label='過輕', data='過輕'),
+                        image_url='http://www.w3.org/2000/svg'
+                    ),
+                                        QuickReplyButton(
+                        action=PostbackAction(label='正常', data='正常'),
+                        image_url='http://www.w3.org/2000/svg'
+                    ),
+                                        QuickReplyButton(
+                        action=PostbackAction(label='過重', data='過重'),
+                        image_url='http://www.w3.org/2000/svg'
+                    ),
+                                        QuickReplyButton(
+                        action=PostbackAction(label='肥胖', data='肥胖'),
+                        image_url='http://www.w3.org/2000/svg'
+                    )
+                ]
+        return message
 
-#旋轉木馬按鈕訊息介面(開始運動) 開發中
+#旋轉木馬按鈕訊息介面(開始運動) *開發中
 
 def Carousel_Template_Sport():
     message = TemplateSendMessage(
