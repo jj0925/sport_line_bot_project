@@ -21,6 +21,7 @@ import time
 #======這裡是呼叫的檔案內容=====
 from message import *
 from news import *
+from reminder import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
