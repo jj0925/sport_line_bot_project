@@ -4,3 +4,4 @@ openai < 1.0.0
 gunicorn
 BeautifulSoup4
 requests
+threading
