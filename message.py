@@ -34,6 +34,75 @@ def Carousel_Template_News():
     )
     return message
 
+#健身提醒 *開發中
+def Carousel_Template_reminder():
+    message = TemplateSendMessage(
+        alt_text='提醒設定',
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='平時都有攝取足夠的水分嗎?',
+                    text='一個模板可以有三個按鈕',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
+                        MessageTemplateAction(
+                            label='用戶發送訊息',
+                            text='我知道這是1'
+                        ),
+                        URITemplateAction(
+                            label='進入1的網頁',
+                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='想要提醒你睡覺嘛?',
+                    text='副標題可以自己改',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='這是ID=2'
+                        ),
+                        MessageTemplateAction(
+                            label='用戶發送訊息',
+                            text='我知道這是2'
+                        ),
+                        URITemplateAction(
+                            label='進入2的網頁',
+                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Number_2_in_light_blue_rounded_square.svg/200px-Number_2_in_light_blue_rounded_square.svg.png'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='鼓勵功能',
+                    text='最多可以放十個',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='這是ID=3'
+                        ),
+                        MessageTemplateAction(
+                            label='用戶發送訊息',
+                            text='我知道這是3'
+                        ),
+                        URITemplateAction(
+                            label='uri2',
+                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
+                        )
+                    ]
+                )
+            ]
+        )
+    )
+    return message
+
+
 #bmi快速回覆選單 *開發中
 def Quick_Reply_Button_bmi():
     message = TextSendMessage(
@@ -60,7 +129,6 @@ def Quick_Reply_Button_bmi():
         return message
 
 #旋轉木馬按鈕訊息介面(開始運動) *開發中
-
 def Carousel_Template_Sport():
     message = TemplateSendMessage(
         alt_text='開始運動',
