@@ -62,7 +62,7 @@ def Carousel_Template_reminder():
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='想要提醒你睡覺嘛?',
-                    text='成人每天建議睡眠時間約為7至9小時，睡眠不足可能會導致身體和心理健康問題。所以一定要準時睡覺!',
+                    text='成人每天建議睡眠時間約為7至9小時',
                     actions = [
                 DatetimePickerAction(
                           label='設定睡覺時間',
