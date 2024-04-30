@@ -62,21 +62,17 @@ def Carousel_Template_reminder():
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='想要提醒你睡覺嘛?',
-                    text='副標題可以自己改',
-                    actions=[
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=2'
-                        ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是2'
-                        ),
-                        URITemplateAction(
-                            label='進入2的網頁',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Number_2_in_light_blue_rounded_square.svg/200px-Number_2_in_light_blue_rounded_square.svg.png'
+                    text='成人每天建議睡眠時間約為7至9小時。睡眠時間不足可能會導致身體和心理健康問題，包括精神疲勞、注意力不集中、情緒波動和免疫功能下降等。所以一定要準時睡覺!',
+                    actions = [
+                DatetimePickerAction(
+                          label='設定睡覺時間',
+                          data='action=set_sleep_time'
+                         ),
+                PostbackAction(
+                          label='關閉提醒',
+                          data='action=stop_reminder'
                         )
-                    ]
+                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
