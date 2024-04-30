@@ -103,7 +103,7 @@ def Carousel_Template_reminder():
 #bmi快速回覆選單 *開發中
 def Quick_Reply_Button_bmi():
     message = TextSendMessage(
-        text='選擇一個動作',
+        text='你的情況',
         quick_reply=QuickReply(
             items=[
                 QuickReplyButton(
