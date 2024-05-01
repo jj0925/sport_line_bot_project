@@ -41,7 +41,7 @@ def Carousel_Template_reminder():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://ease-sleep.com/uploadfiles/l/20191121105548_52546.jpg',
                     title='想要提醒你睡覺嘛?',
                     text='成人每天建議睡眠時間約為7至9小時',
                     actions=[
@@ -53,10 +53,21 @@ def Carousel_Template_reminder():
                             min='00:00',
                             max='23:59'
                          ),
-                        # PostbackTemplateAction(
-                        #     label='關閉提醒',
-                        #     data='action=stop_reminder'
-                        #  )
+                        PostbackTemplateAction(
+                            label='關閉提醒',
+                            data='action=stop_reminder'
+                         )
+                     ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='關閉提醒',
+                    text='關閉所有設定的提醒',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='關閉睡眠提醒',
+                            data='action=stop_reminder'
+                         )
                      ]
                 )
             ]
