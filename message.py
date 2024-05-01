@@ -42,21 +42,6 @@ def Carousel_Template_reminder():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='平時有攝取足夠的水分嗎?',
-                    text='一個模板可以有三個按鈕',
-                    actions=[
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是1'
-                        )
-                    ]
-                ),
-                CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='想要提醒你睡覺嘛?',
                     text='成人每天建議睡眠時間約為7至9小時',
                     actions=[
@@ -68,26 +53,11 @@ def Carousel_Template_reminder():
                             min='00:00',
                             max='23:59'
                          ),
-                        PostbackTemplateAction(
-                            label='關閉提醒',
-                            data='action=stop_reminder'
-                         )
+                        # PostbackTemplateAction(
+                        #     label='關閉提醒',
+                        #     data='action=stop_reminder'
+                        #  )
                      ]
-                ),
-                CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='鼓勵功能',
-                    text='最多可以放十個',
-                    actions=[
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=3'
-                        ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是3'
-                        )
-                    ]
                 )
             ]
         )
