@@ -112,11 +112,11 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, message)
 #===================================新聞功能==================================================== 
 #===================================提醒功能====================================================
-    elif postback_data == 'action=set_sleep_time':#睡覺提醒
-         selected_time = event.postback.params['datetime']
+    elif postback_data == 'set_sleep_time': #睡覺提醒
+         selected_time = event.postback.params['time']
          reminders[user_id] = selected_time
          line_bot_api.reply_message(event.reply_token, TextSendMessage(f'已設定睡覺時間為 {selected_time}(¦3[▓▓]'))
-    elif postback_data == 'action=stop_reminder':
+    elif postback_data == 'stop_sleep_reminder':
         # 停止提醒
         if user_id in reminders:
             del reminders[user_id]
