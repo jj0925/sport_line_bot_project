@@ -42,7 +42,7 @@ def Carousel_Template_reminder():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='平時都有攝取足夠的水分嗎?',
+                    title='平時有攝取足夠的水分嗎?',
                     text='一個模板可以有三個按鈕',
                     actions=[
                         PostbackTemplateAction(
@@ -52,10 +52,6 @@ def Carousel_Template_reminder():
                         MessageTemplateAction(
                             label='用戶發送訊息',
                             text='我知道這是1'
-                        ),
-                        URITemplateAction(
-                            label='進入1的網頁',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png'
                         )
                     ]
                 ),
@@ -65,16 +61,16 @@ def Carousel_Template_reminder():
                     text='成人每天建議睡眠時間約為7至9小時',
                     actions=[
                         DatetimePickerAction(
-                             label='設定睡覺時間',
-                             data='action=set_sleep_time',
-                             mode='time',
-                             initial='22:00',
-                             min='00:00',
-                             max='23:59'
+                            label='設定睡覺時間',
+                            data='action=set_sleep_time',
+                            mode='time',
+                            initial='22:00',
+                            min='00:00',
+                            max='23:59'
                          ),
                         PostbackTemplateAction(
-                             label='關閉提醒',
-                             data='action=stop_reminder'
+                            label='關閉提醒',
+                            data='action=stop_reminder'
                          )
                      ]
                 ),
@@ -90,10 +86,6 @@ def Carousel_Template_reminder():
                         MessageTemplateAction(
                             label='用戶發送訊息',
                             text='我知道這是3'
-                        ),
-                        URITemplateAction(
-                            label='uri2',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
                         )
                     ]
                 )
