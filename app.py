@@ -15,7 +15,6 @@ import openai
 import time
 import traceback
 import threading
-import time
 #======python的函數庫==========
 
 #======這裡是呼叫的檔案內容=====
@@ -88,6 +87,7 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
+check_reminders()
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
@@ -140,7 +140,6 @@ def welcome(event):
         
 import os
 if __name__ == "__main__":
-    threading.Thread(target=check_reminders).start()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
 
