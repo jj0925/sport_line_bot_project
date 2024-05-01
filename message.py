@@ -72,7 +72,7 @@ def Carousel_Template_reminder():
                              max='T23:59',
                              min='T00:00'
                          ),
-                         PostbackTemplateAction(
+                        PostbackTemplateAction(
                              label='關閉提醒',
                              data='action=stop_reminder'
                          )
