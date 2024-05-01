@@ -64,7 +64,7 @@ def Carousel_Template_reminder():
                     title='想要提醒你睡覺嘛?',
                     text='成人每天建議睡眠時間約為7至9小時',
                     actions=[
-                         DatetimePickerAction(
+                        DatetimePickerAction(
                              label='設定睡覺時間',
                              data='action=set_sleep_time',
                              mode='time',
@@ -75,7 +75,7 @@ def Carousel_Template_reminder():
                          PostbackTemplateAction(
                              label='關閉提醒',
                              data='action=stop_reminder'
-                        )
+                         )
                      ]
                 ),
                 CarouselColumn(
