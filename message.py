@@ -68,9 +68,9 @@ def Carousel_Template_reminder():
                              label='設定睡覺時間',
                              data='action=set_sleep_time',
                              mode='time',
-                             initial='T22:00',
-                             max='T23:59',
-                             min='T00:00'
+                             initial='22:00',
+                             min='00:00',
+                             max='23:59'
                          ),
                         PostbackTemplateAction(
                              label='關閉提醒',
