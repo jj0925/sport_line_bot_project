@@ -87,7 +87,7 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-check_reminders(reminders)
+# check_reminders(reminders)
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
@@ -137,9 +137,7 @@ def welcome(event):
     message = TextSendMessage(text=f'{name}歡迎加入')
     line_bot_api.reply_message(event.reply_token, message)
         
-        
-import os
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
