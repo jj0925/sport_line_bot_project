@@ -63,18 +63,18 @@ def Carousel_Template_reminder():
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='想要提醒你睡覺嘛?',
                     text='成人每天建議睡眠時間約為7至9小時',
-                    actions = [
+                    actions=[
                          DatetimePickerAction(
-                            label='設定睡覺時間',
-                            data='action=set_sleep_time',
-                            mode='time',
-                            initial='T22:00:00',
-                            max='T23:59:00',
-                            min='T00:00:00'
+                             label='設定睡覺時間',
+                             data='action=set_sleep_time',
+                             mode='time',
+                             initial='T22:00',
+                             max='T23:59',
+                             min='T00:00'
                          ),
                         PostbackAction(
-                            label='關閉提醒',
-                            data='action=stop_reminder'
+                             label='關閉提醒',
+                             data='action=stop_reminder'
                         )
                      ]
                 ),
@@ -101,6 +101,7 @@ def Carousel_Template_reminder():
         )
     )
     return message
+
 
 
 #bmi快速回覆選單 *開發中
