@@ -87,9 +87,8 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-def run_check_reminders():
-    check_reminders(reminders)
-
+t = threading.Thread(target=check_reminders,args=reminders) 
+t.start()
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
@@ -141,7 +140,5 @@ def welcome(event):
         
 
 if __name__ == "__main__":
-    t = threading.Thread(target=run_check_reminders)
-    t.start()
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
