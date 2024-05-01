@@ -53,10 +53,6 @@ def Carousel_Template_reminder():
                             min='00:00',
                             max='23:59'
                          ),
-                        PostbackTemplateAction(
-                            label='關閉提醒',
-                            data='action=stop_reminder'
-                         )
                      ]
                 ),
                 CarouselColumn(
