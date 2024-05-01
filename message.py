@@ -47,7 +47,7 @@ def Carousel_Template_reminder():
                     actions=[
                         DatetimePickerAction(
                             label='設定睡覺時間',
-                            data='action=set_sleep_time',
+                            data='set_sleep_time',
                             mode='time',
                             initial='22:00',
                             min='00:00',
