@@ -72,7 +72,7 @@ def handle_message(event):
         message = Carousel_Template_Sport()
         line_bot_api.reply_message(event.reply_token, message)
     elif '提醒設定' == msg:
-        message = Carousel_Template_reminder()
+        message = Carousel_Template_reminder()      
         line_bot_api.reply_message(event.reply_token, message)
     elif 'bmi健身' == msg:
         message = Quick_Reply_Button_bmi()
