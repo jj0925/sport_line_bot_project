@@ -58,11 +58,11 @@ def Carousel_Template_reminder():
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='關閉提醒',
-                    text='關閉所有設定的提醒',
+                    text='刪除之前的設定',
                     actions=[
                         PostbackTemplateAction(
                             label='關閉睡眠提醒',
-                            data='action=stop_reminder'
+                            data='stop_sleep_reminder'
                          )
                      ]
                 )
