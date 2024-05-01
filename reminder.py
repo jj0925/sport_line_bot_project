@@ -1,7 +1,7 @@
 from datetime import datetime
 import time
 
-def check_reminders():
+def check_reminders(reminders):
     while True:
         now = datetime.now().strftime('%H:%M')
         for user_id, reminder_time in reminders.items():
