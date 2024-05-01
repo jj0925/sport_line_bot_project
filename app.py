@@ -87,7 +87,7 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-check_reminders()
+check_reminders(reminders)
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
