@@ -88,13 +88,9 @@ def Quick_Reply_Button_bmi():
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='過重', data='過重'),
+                    action=PostbackAction(label='過重、肥胖', data='過重'),
                     image_url=None
                 ),
-                QuickReplyButton(
-                    action=PostbackAction(label='肥胖', data='肥胖'),
-                    image_url=None
-                )
             ]
         )
     )
