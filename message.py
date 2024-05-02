@@ -56,7 +56,7 @@ def Carousel_Template_reminder():
                      ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://img.onl/zv1QhJ',
                     title='關閉提醒',
                     text='刪除之前的設定',
                     actions=[
