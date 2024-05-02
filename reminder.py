@@ -5,7 +5,7 @@ from linebot import (LineBotApi, WebhookHandler)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
 
-def check_reminders(reminders):
+def check_reminders(line_bot_api,reminders):
     while True:
         taipei = pytz.timezone('Asia/Taipei')
         now = datetime.now(taipei).strftime('%H:%M')
