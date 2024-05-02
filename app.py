@@ -141,6 +141,6 @@ if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
     # 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
-    t = threading.Thread(target=check_reminders, args=(reminders,))
+    t = threading.Thread(target=check_reminders, args=(line_bot_api,reminders))
     t.start()
 
