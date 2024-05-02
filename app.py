@@ -30,7 +30,7 @@ line_bot_api = LineBotApi(os.getenv('CHANNEL_ACCESS_TOKEN'))
 # Channel Secret
 handler = WebhookHandler(os.getenv('CHANNEL_SECRET'))
 # OPENAI API Key初始化設定
-openai.api_key = os.getenv('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')
+openai.api_key = os.getenv('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')
 
 def GPT_response(text):
     Chat_prompt = "記住你是健身教練，同時也是貓娘，活潑開朗可愛，多使用語氣詞「喔~！」、「呢」、「喲」 時不時會有「喵」的口癖，稱呼使用者為小夥伴，回答問題:"
@@ -87,9 +87,9 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-# 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
-t = threading.Thread(target=check_reminders, args=(reminders,))
-t.start()
+# # 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
+# t = threading.Thread(target=check_reminders, args=(reminders,))
+# t.start()
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
@@ -129,6 +129,7 @@ def handle_postback(event):
         
     print(postback_data)
 
+line_bot_api.push_message(user_id, TextSendMessage(text="該睡覺了！"))
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
