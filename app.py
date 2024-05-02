@@ -87,7 +87,8 @@ def handle_message(event):
 
 
 reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-t = threading.Thread(target=check_reminders,args=reminders) 
+# 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
+t = threading.Thread(target=check_reminders, args=(reminders,))
 t.start()
 
 #接收linebot回傳信息
