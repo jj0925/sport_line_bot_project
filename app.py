@@ -122,13 +122,14 @@ def handle_postback(event):
             line_bot_api.reply_message(event.reply_token, TextSendMessage('已停止提醒'))
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage('尚未設定睡覺時間喔(´ー`)'))
+            
+    line_bot_api.push_message(user_id, TextSendMessage(text="該睡覺了！"))
+    print("test push_message")
 
         
     print(postback_data)
 
-user_id = event.source.user_id
-line_bot_api.push_message(user_id, TextSendMessage(text="該睡覺了！"))
-print("test push_message")
+
 
 @handler.add(MemberJoinedEvent)
 def welcome(event):
