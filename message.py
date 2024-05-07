@@ -113,14 +113,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='將這個訊息偷偷回傳給機器人'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是1'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='進入1的網頁',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Number_1_in_green_rounded_square.svg/200px-Number_1_in_green_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 ),
                 CarouselColumn(
@@ -132,14 +132,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='這是ID=2'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是2'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='進入2的網頁',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Number_2_in_light_blue_rounded_square.svg/200px-Number_2_in_light_blue_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 ),
                 CarouselColumn(
@@ -151,14 +151,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='這是ID=3'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是3'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='uri2',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 ),
                 CarouselColumn(
@@ -170,14 +170,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='這是ID=3'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是3'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='uri2',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 ),
                 CarouselColumn(
@@ -189,14 +189,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='這是ID=3'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是3'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='uri2',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 ),
                 CarouselColumn(
@@ -208,14 +208,14 @@ def Carousel_Template_Sport():
                             label='回傳一個訊息',
                             data='這是ID=3'
                         ),
-                        MessageTemplateAction(
-                            label='用戶發送訊息',
-                            text='我知道這是3'
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
                         ),
-                        URITemplateAction(
-                            label='uri2',
-                            uri='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Number_3_in_yellow_rounded_square.svg/200px-Number_3_in_yellow_rounded_square.svg.png'
-                        )
+                        PostbackTemplateAction(
+                            label='回傳一個訊息',
+                            data='將這個訊息偷偷回傳給機器人'
+                        ),
                     ]
                 )
             ]
