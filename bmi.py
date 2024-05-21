@@ -32,8 +32,8 @@ def fetch_bmi_news():
     news_list = []
     for n in news:
         link = n.get('href')
-        description = n.get('data-desc')
-        news_list.append((description, link))
+        title = n.text
+        news_list.append({'title': title, 'link': link})
     return news_list
 
 
