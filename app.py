@@ -186,6 +186,11 @@ def handle_postback(event):
         links_text = "\n\n".join(links)
         message = TextSendMessage(text=links_text)
         line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'joke':
+        links = get_jokes()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
 #===================================開始健身====================================================
 #===================================bmi========================================================
     elif postback_data == 'underweight':
