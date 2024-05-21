@@ -22,6 +22,7 @@ from message import *
 from news import *
 from reminder import *
 from sport import *
+from bmi import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -161,6 +162,23 @@ def handle_postback(event):
         links = take_care()
         line_bot_api.reply_message(event.reply_token, links)
 #===================================開始健身====================================================
+#===================================bmi========================================================
+    elif postback_data == 'underweight_links':
+        links = underweight_links()
+        line_bot_api.reply_message(event.reply_token, links)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('飲食建議:1、多吃碳水 2、保證蛋白質的攝入但不過量，例如:牛奶、白飯、紅肉'))        
+    elif postback_data == 'normal_links':
+        links = normal_links()
+        line_bot_api.reply_message(event.reply_token, links)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('希望以上內容能幫助你保持健康、雕塑身形'))
+    elif postback_data == 'overweight_links':
+        links = overweight_links()
+        line_bot_api.overweight_links(event.reply_token, links)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage('飲食建議:1、限制熱量且營養均衡的飲食，三餐定時定量 2、避免食用高熱量、高糖的精緻食物'))  
+    elif postback_data == 'fetch_bmi_news':
+        links = fetch_bmi_news()
+        line_bot_api.reply_message(event.reply_token, links)
+#===================================bmi========================================================
 #===================================提醒功能====================================================
     elif postback_data == 'set_sleep_time': #睡覺提醒
          selected_time = event.postback.params['time']
