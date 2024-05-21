@@ -98,23 +98,6 @@ t.start()
 def handle_postback(event):
     postback_data = event.postback.data
     user_id = event.source.user_id
-    training_functions = {
-    'upper_limbs':upper_limbs,
-    'pecs': pecs,
-    'arm': arm,
-    'back': back,
-    'core': core,
-    'abdomen': abdomen,
-    'waist': waist,
-    'lower_limbs': lower_limbs,
-    'thigh': thigh,
-    'calf': calf,
-    'jogging': jogging,
-    'swim': swim,
-    'bike': bike,
-    'warm_up': warm_up,
-    'take_care': take_care
-     } 
 #===================================新聞功能====================================================  
     bbc_news = bbc_food_healthy()
     yahoo_news = yahoo_health_news()
@@ -133,13 +116,81 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, message)
 #===================================新聞功能==================================================== 
 #===================================開始健身====================================================
-    elif postback_data in training_functions:
-        # 根據 postback_data 取得相對應的函式並執行
-        links = training_functions[postback_data]()
-        # 將連結轉換成文字訊息
+    elif postback_data == 'upper_limbs':
+        links = upper_limbs()
         links_text = "\n\n".join(links)
-        # 回覆給使用者
-        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=links_text))
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'pecs':
+        links = pecs()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'arm':
+        links = arm()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'back':
+        links = back()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'core':
+        links = core()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'abdomen':
+        links = abdomen()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'waist':
+        links = waist()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'lower_limbs':
+        links = lower_limbs()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'thigh':
+        links = thigh()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'calf':
+        links = calf()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'jogging':
+        links = jogging()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'swim':
+        links = swim()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'bike':
+        links = bike()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'warm_up':
+        links = warm_up()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
+    elif postback_data == 'take_care':
+        links = take_care()
+        links_text = "\n\n".join(links)
+        message = TextSendMessage(text=links_text)
+        line_bot_api.reply_message(event.reply_token, message)
 #===================================開始健身====================================================
 #===================================bmi========================================================
     elif postback_data == 'underweight':
