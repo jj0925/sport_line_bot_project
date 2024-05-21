@@ -106,118 +106,106 @@ def Carousel_Template_Sport():
             columns=[
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第一塊模板',
-                    text='一個模板可以有三個按鈕',
+                    title='上肢運動 1',
+                    text='選擇上肢運動吧！',
                     actions=[
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='上肢運動 綜合',
+                            data='upper_limbs'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='胸肌',
+                            data='pecs'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='手臂',
+                            data='arm'
+                        ),
+                    ]
+                ),
+                                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='上肢運動 2',
+                    text='選擇上肢運動吧！',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='背部',
+                            data='back'
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    title='核心運動',
+                    text='選擇核心運動吧！',
+                    actions=[
+                        PostbackTemplateAction(
+                            label='核心運動 綜合',
+                            data='core'
+                        ),
+                        PostbackTemplateAction(
+                            label='腹部',
+                            data='abdomen'
+                        ),
+                        PostbackTemplateAction(
+                            label='腰部',
+                            data='waist'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第二塊模板',
-                    text='副標題可以自己改',
+                    title='下肢運動',
+                    text='選擇下肢運動吧！',
                     actions=[
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=2'
+                            label='下肢運動 綜合',
+                            data='lower_limbs'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='大腿',
+                            data='thigh'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='小腿',
+                            data='calf'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第三個模塊',
-                    text='最多可以放十個',
+                    title='有氧運動',
+                    text='選擇有氧運動吧！',
                     actions=[
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=3'
+                            label='慢跑',
+                            data='jogging'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='游泳',
+                            data='swim'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
+                            label='騎車',
+                            data='bike'
                         ),
                     ]
                 ),
                 CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第三個模塊',
-                    text='最多可以放十個',
+                    title='其他運動',
+                    text='選擇其他運動吧！',
                     actions=[
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=3'
+                            label='熱身運動',
+                            data='warm_up'
                         ),
                         PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
+                            label='收操',
+                            data='take_care'
+                        )
                     ]
                 ),
-                CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第三個模塊',
-                    text='最多可以放十個',
-                    actions=[
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=3'
-                        ),
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                    ]
-                ),
-                CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='這是第三個模塊',
-                    text='最多可以放十個',
-                    actions=[
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='這是ID=3'
-                        ),
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                        PostbackTemplateAction(
-                            label='回傳一個訊息',
-                            data='將這個訊息偷偷回傳給機器人'
-                        ),
-                    ]
-                )
             ]
         )
     )
