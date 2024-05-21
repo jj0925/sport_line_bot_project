@@ -124,7 +124,7 @@ def Carousel_Template_Sport():
                         PostbackTemplateAction(
                             label='手臂',
                             data='arm'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -154,7 +154,7 @@ def Carousel_Template_Sport():
                         PostbackTemplateAction(
                             label='腰部',
                             data='waist'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -173,7 +173,7 @@ def Carousel_Template_Sport():
                         PostbackTemplateAction(
                             label='小腿',
                             data='calf'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
@@ -192,7 +192,7 @@ def Carousel_Template_Sport():
                         PostbackTemplateAction(
                             label='騎車',
                             data='bike'
-                        ),
+                        )
                     ]
                 ),
                 CarouselColumn(
