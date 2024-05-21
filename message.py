@@ -80,19 +80,19 @@ def Quick_Reply_Button_bmi():
         quick_reply=QuickReply(
             items=[
                 QuickReplyButton(
-                    action=PostbackAction(label='過輕', data='underweight_links'),
+                    action=PostbackAction(label='過輕', data='underweight'),
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='正常', data='normal_links'),
+                    action=PostbackAction(label='正常', data='normal'),
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='過重、肥胖', data='overweight_links'),
+                    action=PostbackAction(label='過重、肥胖', data='overweight'),
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='相關新聞', data='fetch_bmi_news'),
+                    action=PostbackAction(label='相關新聞', data='bmi_news'),
                     image_url=None
                 ),
             ]
