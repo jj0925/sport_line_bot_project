@@ -5,11 +5,14 @@ def upper_limbs():
        ]
   return link
 #胸肌
-def pecs():
+def pecs_back():
     links = [
         "https://www.youtube.com/watch?v=Iiwaj6ECX7Q&pp=ygUY6IO46YOo6IOM6YOo5o",
         "https://www.youtube.com/watch?v=VMvsHq92nlw&pp=ygUM6IO46IKM6KiT57e0",
-        "https://www.youtube.com/watch?v=qVf2QmFNV0o&pp=ygUM6IO46IKM6KiT57e0"
+        "https://www.youtube.com/watch?v=qVf2QmFNV0o&pp=ygUM6IO46IKM6KiT57e0",
+        "https://www.youtube.com/watch?v=pxzsXLjKihQ&pp=ygUM6IOM6YOo6KiT57e0",
+        "https://www.youtube.com/watch?v=47RlYiVVuio&pp=ygUM6IOM6YOo6KiT57e0",
+        "https://www.youtube.com/watch?v=zkiVFffsqyw&pp=ygUM6IOM6YOo6KiT57e0"
     ]
     return links
 #手臂
