@@ -134,7 +134,7 @@ def handle_postback(event):
         'take_care': take_care
     } 
     # 檢查 postback_data 是否在 training_functions 中
-  elif postback_data in training_functions:
+     elif postback_data in training_functions:
         # 根據 postback_data 取得相對應的函式並執行
         links = training_functions[postback_data]()
         # 將連結轉換成文字訊息
@@ -143,31 +143,31 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=links_text))
 #===================================開始健身====================================================
 #===================================bmi========================================================
-elif postback_data == 'underweight':
-    links = underweight_links()
-    links_text = "\n\n".join(links)
-    line_bot_api.reply_message(event.reply_token, [
-        TextSendMessage(text=links_text),
-        TextSendMessage(text='飲食建議:\n1、多吃碳水\n2、保證蛋白質的攝入但不過量，例如:牛奶、白飯、紅肉')
-    ])
-elif postback_data == 'normal':
-    links = normal_links()
-    links_text = "\n\n".join(links)
-    line_bot_api.reply_message(event.reply_token, [
-        TextSendMessage(text=links_text),
-        TextSendMessage(text='希望以上內容能幫助你保持健康、雕塑身形')
-    ])
-elif postback_data == 'overweight':
-    links = overweight_links()
-    links_text = "\n\n".join(links)
-    line_bot_api.reply_message(event.reply_token, [
-        TextSendMessage(text=links_text),
-        TextSendMessage(text='飲食建議:\n1、限制熱量且營養均衡的飲食，三餐定時定量\n2、避免食用高熱量、高糖的精緻食物')
-    ])
-elif postback_data == 'bmi_news':
-    links = fetch_bmi_news()
-    links_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in links])
-    line_bot_api.reply_message(event.reply_token, TextSendMessage(text=links_text))
+    elif postback_data == 'underweight':
+        links = underweight_links()
+        links_text = "\n\n".join(links)
+        line_bot_api.reply_message(event.reply_token, [
+            TextSendMessage(text=links_text),
+            TextSendMessage(text='飲食建議:\n1、多吃碳水\n2、保證蛋白質的攝入但不過量，例如:牛奶、白飯、紅肉')
+        ])
+    elif postback_data == 'normal':
+        links = normal_links()
+        links_text = "\n\n".join(links)
+        line_bot_api.reply_message(event.reply_token, [
+            TextSendMessage(text=links_text),
+            TextSendMessage(text='希望以上內容能幫助你保持健康、雕塑身形')
+        ])
+    elif postback_data == 'overweight':
+        links = overweight_links()
+        links_text = "\n\n".join(links)
+        line_bot_api.reply_message(event.reply_token, [
+            TextSendMessage(text=links_text),
+            TextSendMessage(text='飲食建議:\n1、限制熱量且營養均衡的飲食，三餐定時定量\n2、避免食用高熱量、高糖的精緻食物')
+        ])
+    elif postback_data == 'bmi_news':
+        links = fetch_bmi_news()
+        links_text = "\n\n".join([f"{news_item['title']}\n{news_item['link']}" for news_item in links])
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=links_text))
 #===================================bmi========================================================
 #===================================提醒功能====================================================
     elif postback_data == 'set_sleep_time': #睡覺提醒
