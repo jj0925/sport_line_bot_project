@@ -52,7 +52,7 @@ def waist():
     ]
     return links
 #下肢
-def Lower_limbs():
+def lower_limbs():
     links = [
         "https://www.youtube.com/watch?v=NinrX2xbezI&pp=ygUM5aSn6IW_6KiT57e0",
         "https://www.youtube.com/watch?v=z0zQCw4TT4s&pp=ygUM5LiL6IKi6KiT57e0"
@@ -103,7 +103,7 @@ def warm_up():
     ]
     return links
 #收操
-def Take_care():
+def take_care():
     links = [
         "https://www.youtube.com/watch?v=9_RUKL4QjWM&pp=ygUG5pS25pON",
         "https://www.youtube.com/watch?v=4SBBu-JYXmw&pp=ygUG5pS25pON",
