@@ -121,18 +121,13 @@ def handle_postback(event):
         links_text = "\n\n".join(links)
         message = TextSendMessage(text=links_text)
         line_bot_api.reply_message(event.reply_token, message)
-    elif postback_data == 'pecs':
-        links = pecs()
+    elif postback_data == 'pecs_back':
+        links = pecs_back()
         links_text = "\n\n".join(links)
         message = TextSendMessage(text=links_text)
         line_bot_api.reply_message(event.reply_token, message)
     elif postback_data == 'arm':
         links = arm()
-        links_text = "\n\n".join(links)
-        message = TextSendMessage(text=links_text)
-        line_bot_api.reply_message(event.reply_token, message)
-    elif postback_data == 'back':
-        links = back()
         links_text = "\n\n".join(links)
         message = TextSendMessage(text=links_text)
         line_bot_api.reply_message(event.reply_token, message)
