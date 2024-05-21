@@ -127,7 +127,7 @@ def Carousel_Template_Sport():
                         ),
                     ]
                 ),
-                                CarouselColumn(
+                CarouselColumn(
                     thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
                     title='上肢運動 2',
                     text='選擇上肢運動吧！',
