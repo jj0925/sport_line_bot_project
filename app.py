@@ -133,8 +133,7 @@ def handle_postback(event):
         'warm_up': warm_up,
         'take_care': take_care
     } 
-    # 檢查 postback_data 是否在 training_functions 中
-     elif postback_data in training_functions:
+    elif postback_data in training_functions:
         # 根據 postback_data 取得相對應的函式並執行
         links = training_functions[postback_data]()
         # 將連結轉換成文字訊息
