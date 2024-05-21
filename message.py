@@ -196,6 +196,10 @@ def Carousel_Template_Sport():
                         PostbackTemplateAction(
                             label='收操',
                             data='take_care'
+                        ),
+                        PostbackTemplateAction(
+                            label='隨機一則笑話',
+                            data='joke'
                         )
                     ]
                 ),
