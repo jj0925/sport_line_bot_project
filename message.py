@@ -119,7 +119,7 @@ def Carousel_Template_Sport():
                         ),
                         PostbackTemplateAction(
                             label='胸肌、背部',
-                            data='pecs'
+                            data='pecs_back'
                         ),
                         PostbackTemplateAction(
                             label='手臂',
