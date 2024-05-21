@@ -73,22 +73,26 @@ def Carousel_Template_reminder():
 
 
 
-#bmi快速回覆選單 *開發中
+#bmi快速回覆選單
 def Quick_Reply_Button_bmi():
     message = TextSendMessage(
         text='你的情況',
         quick_reply=QuickReply(
             items=[
                 QuickReplyButton(
-                    action=PostbackAction(label='過輕', data='過輕'),
+                    action=PostbackAction(label='過輕', data='underweight_links'),
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='正常', data='正常'),
+                    action=PostbackAction(label='正常', data='normal_links'),
                     image_url=None
                 ),
                 QuickReplyButton(
-                    action=PostbackAction(label='過重、肥胖', data='過重'),
+                    action=PostbackAction(label='過重、肥胖', data='overweight_links'),
+                    image_url=None
+                ),
+                QuickReplyButton(
+                    action=PostbackAction(label='相關新聞', data='fetch_bmi_news'),
                     image_url=None
                 ),
             ]
@@ -98,7 +102,7 @@ def Quick_Reply_Button_bmi():
 
 
 
-#旋轉木馬按鈕訊息介面(開始運動) *開發中
+#旋轉木馬按鈕訊息介面(開始運動)
 def Carousel_Template_Sport():
     message = TemplateSendMessage(
         alt_text='開始運動',
