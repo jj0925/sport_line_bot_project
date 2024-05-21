@@ -21,6 +21,7 @@ import threading
 from message import *
 from news import *
 from reminder import *
+from sport import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -113,6 +114,53 @@ def handle_postback(event):
         message = TextSendMessage(text=sport_science_news_text)
         line_bot_api.reply_message(event.reply_token, message)
 #===================================新聞功能==================================================== 
+#===================================開始健身====================================================
+    elif postback_data == 'upper_limbs':
+        links = upper_limbs()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'pecs':
+        links = pecs()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'arm':
+        links = arm()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'back':
+        links = back()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'core':
+        links = core()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'abdomen':
+        links = abdomen()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'waist':
+        links = waist()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'lower_limbs':
+        links = lower_limbs()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'thigh':
+        links = thigh()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'calf':
+        links = calf()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'jogging':
+        links = jogging()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'swim':
+        links = swim()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'bike':
+        links = bike()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'warm_up':
+        links = warm_up()
+        line_bot_api.reply_message(event.reply_token, links)
+    elif postback_data == 'take_care':
+        links = take_care()
+        line_bot_api.reply_message(event.reply_token, links)
+#===================================開始健身====================================================
 #===================================提醒功能====================================================
     elif postback_data == 'set_sleep_time': #睡覺提醒
          selected_time = event.postback.params['time']
