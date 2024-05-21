@@ -98,6 +98,23 @@ t.start()
 def handle_postback(event):
     postback_data = event.postback.data
     user_id = event.source.user_id
+    training_functions = {
+    'upper_limbs':upper_limbs,
+    'pecs': pecs,
+    'arm': arm,
+    'back': back,
+    'core': core,
+    'abdomen': abdomen,
+    'waist': waist,
+    'lower_limbs': lower_limbs,
+    'thigh': thigh,
+    'calf': calf,
+    'jogging': jogging,
+    'swim': swim,
+    'bike': bike,
+    'warm_up': warm_up,
+    'take_care': take_care
+     } 
 #===================================新聞功能====================================================  
     bbc_news = bbc_food_healthy()
     yahoo_news = yahoo_health_news()
@@ -116,23 +133,6 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, message)
 #===================================新聞功能==================================================== 
 #===================================開始健身====================================================
-    training_functions = {
-        'upper_limbs':upper_limbs,
-        'pecs': pecs,
-        'arm': arm,
-        'back': back,
-        'core': core,
-        'abdomen': abdomen,
-        'waist': waist,
-        'lower_limbs': lower_limbs,
-        'thigh': thigh,
-        'calf': calf,
-        'jogging': jogging,
-        'swim': swim,
-        'bike': bike,
-        'warm_up': warm_up,
-        'take_care': take_care
-    } 
     elif postback_data in training_functions:
         # 根據 postback_data 取得相對應的函式並執行
         links = training_functions[postback_data]()
