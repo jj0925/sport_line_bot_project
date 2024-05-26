@@ -2,20 +2,20 @@ import datetime
 import matplotlib.pyplot as plt
 import pyimgur
 
-def add_weight_entry(user_input):
+def add_weight_entry(user_id, user_input):
+    # 擷取體重數據
     weight_str = user_input.split(':')[1].strip()
     weight = float(weight_str)
     
-    current_time = datetime.datetime.now().strftime("%Y-%m-%d)
-    
-    # 將數據存入字典
-    weight_data[current_time] = weight
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d") 
+    if user_id not in user_weight_data:
+        user_weight_data[user_id] = {}    
+    user_weight_data[user_id][current_time] = weight
     return f"體重數據 {weight} 公斤 已存儲於 {current_time}"
 
 def plot_weight_changes():
-    # 獲取時間和體重數據
-    times = list(weight_data.keys())
-    weights = list(weight_data.values())
+    times = list(user_weight_data[user_id].keys())
+    weights = list(user_weight_data[user_id].values())
     
     # 繪製曲線圖
     plt.figure(figsize=(10, 5))
@@ -34,5 +34,6 @@ def plot_weight_changes():
     PATH = "weight_changes.png"
     im = pyimgur.Imgur(CLIENT_ID)
     uploaded_image = im.upload_image(PATH, title="Uploaded with PyImgur")
+    plt.clf()    
     return uploaded_image.link
 
