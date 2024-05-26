@@ -89,7 +89,6 @@ def handle_message(event):
         image_url = plot_weight_changes()
         if image_url:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='正在繪製體重變化圖...'))
-            # 傳送圖片 URL 給使用者
             line_bot_api.push_message(
                 event.source.user_id,
                 ImageSendMessage(
