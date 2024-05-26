@@ -1,7 +1,7 @@
 import datetime
 import matplotlib.pyplot as plt
 import pyimgur
-import os
+import tempfile,os
 
 user_weight_data = {}
 
