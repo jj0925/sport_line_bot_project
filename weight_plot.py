@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pyimgur
 
 def add_weight_entry(user_id, user_input):
-    # 擷取體重數據
+    global user_weight_data
     weight_str = user_input.split(':')[1].strip()
     weight = float(weight_str)
     
@@ -14,6 +14,7 @@ def add_weight_entry(user_id, user_input):
     return f"體重數據 {weight} 公斤 已存儲於 {current_time}"
 
 def plot_weight_changes():
+    global user_weight_data
     times = list(user_weight_data[user_id].keys())
     weights = list(user_weight_data[user_id].values())
     
