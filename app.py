@@ -23,6 +23,7 @@ from news import *
 from reminder import *
 from sport import *
 from bmi import *
+from weight_plot import *
 #======這裡是呼叫的檔案內容=====
 
 app = Flask(__name__)
@@ -59,13 +60,16 @@ def callback():
         abort(400)
     return 'OK'
 
+#儲存使用者體重
+user_weight_data = {}
 
 # 處理訊息
 #接收user回傳信息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-
+    user_id = event.source.user_id
+    
     if '來看新聞' == msg:
         message = Carousel_Template_News()
         line_bot_api.reply_message(event.reply_token, message)
@@ -78,6 +82,23 @@ def handle_message(event):
     elif 'bmi健身' == msg:
         message = Quick_Reply_Button_bmi()
         line_bot_api.reply_message(event.reply_token, message)
+    elif msg.startswith("體重:"):
+        message = add_weight_entry(user_id,msg)
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
+    elif msg == "繪製體重變化圖":
+        image_url = plot_weight_changes()
+        if image_url:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='正在繪製體重變化圖...'))
+            # 傳送圖片 URL 給使用者
+            line_bot_api.push_message(
+                event.source.user_id,
+                ImageSendMessage(
+                    original_content_url=image_url,
+                    preview_image_url=image_url
+                )
+            )
+        else:
+            line_bot_api.reply_message(event.reply_token, TextSendMessage(text='上傳圖片失敗了呢...'))
     else:
         message = msg      
         line_bot_api.reply_message(event.reply_token, message)
@@ -90,9 +111,8 @@ def handle_message(event):
     #        print(traceback.format_exc())
     #        line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
 
-
 # reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-# # 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
+## 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
 # t = threading.Thread(target=check_reminders, args=(line_bot_api,reminders))
 # t.start()
 
