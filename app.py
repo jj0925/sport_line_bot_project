@@ -86,7 +86,7 @@ def handle_message(event):
         message = add_weight_entry(user_id,msg)
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=message))
     elif msg == "繪製體重變化圖":
-        image_url = plot_weight_changes()
+        image_url = plot_weight_changes(user_id)
         if image_url:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='正在繪製體重變化圖...'))
             line_bot_api.push_message(
