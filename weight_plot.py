@@ -33,7 +33,7 @@ def plot_weight_changes(user_id):
     file_path = 'weight_changes.png'
     plt.savefig(file_path)
     # 轉換成url
-    CLIENT_ID = "CLIENT_ID"
+    CLIENT_ID = os.getenv('CLIENT_ID')
     PATH = "weight_changes.png"
     im = pyimgur.Imgur(CLIENT_ID)
     try:
