@@ -6,3 +6,4 @@ BeautifulSoup4
 requests
 pytz
 pyimgur
+matplotlib
