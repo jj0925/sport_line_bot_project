@@ -100,7 +100,7 @@ def handle_message(event):
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='上傳圖片失敗了呢...'))
     else:
-        message = msg      
+        message = TextSendMessage(text=msg) 
         line_bot_api.reply_message(event.reply_token, message)
     # else:#ChatGPT回覆
     #    try:
