@@ -2,6 +2,8 @@ import datetime
 import matplotlib.pyplot as plt
 import pyimgur
 
+user_weight_data = {}
+
 def add_weight_entry(user_id, user_input):
     global user_weight_data
     weight_str = user_input.split(':')[1].strip()
