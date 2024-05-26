@@ -65,7 +65,18 @@ def Carousel_Template_reminder():
                             data='stop_sleep_reminder'
                          )
                      ]
-                )
+                ),
+                CarouselColumn(
+                    thumbnail_image_url='https://images.chinatimes.com/newsphoto/2018-08-18/656/20180818002667.jpg',
+                    title='紀錄您的體重變化?',
+                    text='使用範例，輸入>體重:60.0，會記錄您的體重',
+                    actions=[
+                              MessageAction(
+                                  label='繪製體重變化圖',
+                                  text='繪製體重變化圖!'
+                              )
+                          ]
+                     )
             ]
         )
     )
