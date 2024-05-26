@@ -73,7 +73,7 @@ def Carousel_Template_reminder():
                     actions=[
                               MessageAction(
                                   label='繪製體重變化圖',
-                                  text='繪製體重變化圖!'
+                                  text='繪製體重變化圖'
                               )
                           ]
                      )
