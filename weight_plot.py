@@ -36,7 +36,11 @@ def plot_weight_changes(user_id):
     CLIENT_ID = "CLIENT_ID"
     PATH = "weight_changes.png"
     im = pyimgur.Imgur(CLIENT_ID)
-    uploaded_image = im.upload_image(PATH, title="Uploaded with PyImgur")
-    plt.clf()    
-    return uploaded_image.link
+    try:
+        uploaded_image = im.upload_image(PATH, title="Uploaded with Pyimgur")
+        plt.clf()
+        return uploaded_image.link
+    except KeyError:
+        plt.clf()
+        return None
 
