@@ -98,22 +98,19 @@ def handle_message(event):
             )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='上傳圖片失敗了呢...'))
-    else:
-        message = TextSendMessage(text=msg) 
-        line_bot_api.reply_message(event.reply_token, message)
-    # else:#ChatGPT回覆
-    #    try:
-    #        GPT_answer = GPT_response(msg)
-    #        print(GPT_answer)
-    #        line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
-    #    except:
-    #        print(traceback.format_exc())
-    #        line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
+    else:#ChatGPT回覆
+       try:
+           GPT_answer = GPT_response(msg)
+           print(GPT_answer)
+           line_bot_api.reply_message(event.reply_token, TextSendMessage(GPT_answer))
+       except:
+           print(traceback.format_exc())
+           line_bot_api.reply_message(event.reply_token, TextSendMessage('你所使用的OPENAI API key額度可能已經超過，請於後台Log內確認錯誤訊息'))
 
-# reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
-## 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
-# t = threading.Thread(target=check_reminders, args=(line_bot_api,reminders))
-# t.start()
+reminders = {}#用於存取用戶設定的提醒時間(提醒功能)
+# 創建一個新的執行緒來運行 check_reminders 函數，並將 reminders 作為參數傳遞進去
+t = threading.Thread(target=check_reminders, args=(line_bot_api,reminders))
+t.start()
 
 #接收linebot回傳信息
 @handler.add(PostbackEvent)
