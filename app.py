@@ -109,7 +109,7 @@ def handle_message(event):
             )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='上傳圖片失敗了呢...'))
-    elif msg == "使用說明"
+    elif msg == "使用說明":
         instructions = get_usage_instructions()
         muscle_image_url = "https://hacker1356.wordpress.com/wp-content/uploads/2020/12/image-53.png"
         line_bot_api.reply_message(
