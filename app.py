@@ -43,7 +43,18 @@ def GPT_response(text):
     # 重組回應
     answer = response['choices'][0]['text'].replace('。','')
     return answer
-
+def get_usage_instructions():
+    instructions = (
+        "Linebot 介紹以及使用說明\n\n"
+        "根據下方圖文介面點選不同功能:\n"
+        "1. 開始運動: 總共分為上肢、核心、下肢、有氧以及熱身收操，五大部分，每個部分3個小項目供根據小伙伴的需求去改善自己需要的部位。\n"
+        "2. 健身顧問: 小伙伴只要發送訊息，就可以直接跟 ChatGPT 的健身顧問進行對話哦！\n"
+        "3. BMI 健康: 根據不同的 BMI 狀態有不同的改善方法，如果想要知道自己的 BMI 的話可以輸入自己的身高體重健身顧問會直接幫你計算。\n"
+        "4. 健康新聞: 三種不同風格的內容，幫你爬取最新的五篇健康新聞。\n"
+        "5. 健身提醒: 個人化服務，可以設定睡覺時間以及記錄體重變化（偵測「體重:」關鍵字，把你的體重以及當日日期存入）\n"
+        "順便附上肌肉結構圖幫助了解自己的肌肉部位名稱\n"
+    )
+    return instructions
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -98,6 +109,19 @@ def handle_message(event):
             )
         else:
             line_bot_api.reply_message(event.reply_token, TextSendMessage(text='上傳圖片失敗了呢...'))
+    elif msg == "使用說明"
+        instructions = get_usage_instructions()
+        muscle_image_url = "https://hacker1356.wordpress.com/wp-content/uploads/2020/12/image-53.png"
+        line_bot_api.reply_message(
+            event.reply_token, 
+            [
+                TextSendMessage(text=instructions),
+                ImageSendMessage(
+                    original_content_url=muscle_image_url,
+                    preview_image_url=muscle_image_url
+                )
+            ]
+        )
     else:#ChatGPT回覆
        try:
            GPT_answer = GPT_response(msg)
