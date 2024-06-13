@@ -231,8 +231,7 @@ def handle_postback(event):
         line_bot_api.reply_message(event.reply_token, message)
     elif postback_data == 'joke':
         links = get_jokes()
-        links_text = "\n\n".join(links)
-        message = TextSendMessage(text=links_text)
+        message = TextSendMessage(text=links)
         line_bot_api.reply_message(event.reply_token, message)
 #===================================開始健身====================================================
 #===================================bmi========================================================
