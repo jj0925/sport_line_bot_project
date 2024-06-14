@@ -120,8 +120,8 @@ def Carousel_Template_Sport():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
-                    title='上肢運動 1',
+                    thumbnail_image_url='https://i.imgur.com/tfDlYwU.png',
+                    title='上肢運動',
                     text='選擇上肢運動吧！',
                     actions=[
                         PostbackTemplateAction(
