@@ -120,7 +120,7 @@ def Carousel_Template_Sport():
         template=CarouselTemplate(
             columns=[
                 CarouselColumn(
-                    thumbnail_image_url='https://i.imgur.com/tfDlYwU.png',
+                    thumbnail_image_url='https://i.imgur.com/PNoHApL.png',
                     title='上肢運動',
                     text='選擇上肢運動吧！',
                     actions=[
@@ -139,7 +139,7 @@ def Carousel_Template_Sport():
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://i.imgur.com/A9y6Igl.png',
                     title='核心運動',
                     text='選擇核心運動吧！',
                     actions=[
@@ -158,7 +158,7 @@ def Carousel_Template_Sport():
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://i.imgur.com/ntYwhn7.png',
                     title='下肢運動',
                     text='選擇下肢運動吧！',
                     actions=[
@@ -177,7 +177,7 @@ def Carousel_Template_Sport():
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://i.imgur.com/Te1cGVc.png',
                     title='有氧運動',
                     text='選擇有氧運動吧！',
                     actions=[
@@ -196,7 +196,7 @@ def Carousel_Template_Sport():
                     ]
                 ),
                 CarouselColumn(
-                    thumbnail_image_url='https://i.ibb.co/qnMNHg0/2024-04-05-175234.png',
+                    thumbnail_image_url='https://i.imgur.com/lxae5eV.png',
                     title='其他運動',
                     text='選擇其他運動吧！',
                     actions=[
