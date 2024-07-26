@@ -34,7 +34,7 @@ def Carousel_Template_News():
     )
     return message
 
-#健身提醒 *開發中
+#健身提醒
 def Carousel_Template_reminder():
     message = TemplateSendMessage(
         alt_text='提醒設定',
